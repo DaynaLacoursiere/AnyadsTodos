@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    <item android:id="@+id/summaryItem" android:title="Show Summaries" android:onClick="showSummaries"></item>
+    <item android:id="@+id/mailItem" android:title="Mail Tasks" android:onClick="mailTasks"></item>
+    <item android:id="@+id/archiveItem" android:title="Go to Archive" android:onClick="archiveTasks"></item>
+    <item android:id="@+id/editTasksItem" android:title="Edit Tasks" android:onClick="editTasks"></item>
+
+</menu>
