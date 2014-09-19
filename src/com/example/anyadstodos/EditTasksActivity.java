@@ -9,9 +9,11 @@ import com.dlacours.anyadstodos.TaskListController;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -34,6 +36,8 @@ public class EditTasksActivity extends Activity {
     	ArrayList<Task> list = new ArrayList<Task>(tasks);
     	ArrayAdapter<Task> taskAdapter = new ArrayAdapter<Task>(this, android.R.layout.simple_list_item_1, list);
     	editList.setAdapter(taskAdapter); //gets the tasks into the editList
+    	
+
     	
     	/*editList.setOnClickListener(new OnClickListener() {
 			
