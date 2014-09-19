@@ -13,5 +13,9 @@ public class Task {
 		// TODO Auto-generated method stub
 		return this.taskName;
 	}
+	
+	public String toString(){
+		return getTask();
+	}
 
 }

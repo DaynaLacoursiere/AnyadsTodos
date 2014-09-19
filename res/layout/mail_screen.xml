@@ -16,25 +16,6 @@
         android:textColor="#ff0000"
         android:textSize="@android:dimen/app_icon_size" />
 
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/check_all_button"
-        android:layout_below="@+id/total_w"
-        android:layout_centerHorizontal="true" >
-
-    </ListView>
-
-    <Button
-        android:id="@+id/email_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/listView1"
-        android:text="@string/email"
-        android:textColor="#ff0000" />
-
     <Button
         android:id="@+id/check_all_button"
         android:layout_width="wrap_content"
@@ -42,5 +23,24 @@
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/email_button"
         android:text="@string/check_all" />
+
+    <Button
+        android:id="@+id/email_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/email"
+        android:textColor="#ff0000" />
+
+    <ListView
+        android:id="@+id/emailList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/check_all_button"
+        android:layout_below="@+id/total_w"
+        android:layout_centerHorizontal="true" >
+
+    </ListView>
 
 </RelativeLayout>

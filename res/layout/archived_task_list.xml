@@ -9,7 +9,7 @@
     tools:context=".ArchiveListActivities" >
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/taskEditor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"

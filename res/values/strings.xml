@@ -31,5 +31,6 @@
     <string name="title_activity_mail_items">MailItemsActivity</string>
     <string name="title_activity_archive_tasks">ArchiveTasksActivity</string>
     <string name="title_activity_summaries">SummariesActivity</string>
+    <string name="title_activity_edit_tasks">EditTasksActivity</string>
 
 </resources>

@@ -38,6 +38,10 @@
             android:name="com.example.anyadstodos.SummariesActivity"
             android:label="@string/title_activity_summaries" >
         </activity>
+        <activity
+            android:name="com.example.anyadstodos.EditTasksActivity"
+            android:label="@string/title_activity_edit_tasks" >
+        </activity>
     </application>
 
 </manifest>

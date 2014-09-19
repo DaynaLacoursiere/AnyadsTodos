@@ -1,6 +1,7 @@
 package com.dlacours.anyadstodos;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +23,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.example.anyadstodos.ArchiveListActivities;
+import com.example.anyadstodos.EditTasksActivity;
 import com.example.anyadstodos.MailItemsActivity;
 import com.example.anyadstodos.R;
 import com.example.anyadstodos.SummariesActivity;
@@ -27,8 +32,6 @@ public class MainActivity extends Activity {
 
 	private ListView taskList;
 	private EditText addTask;
-	//private List<String> tasks = new ArrayList<String>(); //from http://stackoverflow.com/questions/2843366/how-to-add-new-elements-to-an-array
-	//private ArrayAdapter<String> tasksArray = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tasks);
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,35 +55,47 @@ public class MainActivity extends Activity {
     	addTask = (EditText) findViewById(R.id.addTask);
     	taskList = (ListView) findViewById(R.id.taskListView);
 
-    	//String task = addTask.getText().toString();
-    	//tasks.add(task);
+    	String addText = addTask.getText().toString();
+    	TaskList theTasks = TaskListController.getTaskList();
     	
-    	//taskList.setAdapter(tasksArray); //so far doesn't work. Got from http://www.codelearn.org/android-tutorial/android-listview
+    	if (!addText.equals("")){
+    		Task task = new Task(addText);
+    		theTasks.addTask(task);
+    	}
+    	
+    	
+    	Collection<Task> tasks = TaskListController.getTaskList().getTasks();
+    	ArrayList<Task> list = new ArrayList<Task>(tasks);
+    	ArrayAdapter<Task> taskAdapter = new ArrayAdapter<Task>(this, android.R.layout.simple_list_item_1, list);
+    	taskList.setAdapter(taskAdapter);
+  
+
+    	
+    	addTask.setText("");
     	
     	//Toast.makeText(MainActivity.this, task, Toast.LENGTH_SHORT).show();
     }
 
+    
 
     public void showSummaries(MenuItem menu){
-    	//Toast.makeText(this, "Showing Summaries", Toast.LENGTH_SHORT).show();
     	Intent intent = new Intent(MainActivity.this, SummariesActivity.class);
     	startActivity(intent);
     	
     }
     
     public void mailTasks(MenuItem menu){
-    	//Toast.makeText(this, "Mailing Tasks", Toast.LENGTH_SHORT).show();
     	Intent intent = new Intent(MainActivity.this, MailItemsActivity.class);
     	startActivity(intent);
     }
     
     public void archiveTasks(MenuItem menu){
-    	//Toast.makeText(this, "Archiving Tasks", Toast.LENGTH_SHORT).show();
     	Intent intent = new Intent(MainActivity.this, ArchiveListActivities.class);
     	startActivity(intent);
     }
     
     public void editTasks(MenuItem menu){
-    	Toast.makeText(this, "Editing Tasks", Toast.LENGTH_SHORT).show();
+    	Intent intent = new Intent(MainActivity.this, EditTasksActivity.class);
+    	startActivity(intent);
     }
 }
