@@ -1,6 +1,6 @@
 package com.dlacours.anyadstodos;
 
-
+//Awesome singleton stuff
 public class TaskListController {
 	private static TaskList taskList = null;
 	

@@ -11,119 +11,18 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal"
-        android:textColor="#0000ff"
         android:text="@string/sum_screen_title"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#0000ff"
         android:textSize="@android:dimen/app_icon_size" />
 
-    <TextView
-        android:id="@+id/unc_num"
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/sumList"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/arc_w"
-        android:layout_alignRight="@+id/check_num"
-        android:text="@string/unc_num"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:layout_below="@+id/sum_title"
+        android:layout_centerHorizontal="true" >
 
-    <TextView
-        android:id="@+id/arc_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/arc_w"
-        android:layout_alignRight="@+id/unc_num"
-        android:text="@string/arc_num"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/c_and_arc_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/c_and_arc_w"
-        android:layout_alignLeft="@+id/arc_num"
-        android:text="@string/c_and_arc_num"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/unc_and_arc_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/unc_and_arc_w"
-        android:layout_alignRight="@+id/c_and_arc_num"
-        android:text="@string/unc_and_arc_num"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/total_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/total_w"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="21dp"
-        android:text="@string/total_num"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/check_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/unc_w"
-        android:layout_alignLeft="@+id/total_num"
-        android:text="@string/check_num"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/unc_and_arc_w"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:text="@string/unc_and_arc_w"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/c_and_arc_w"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/unc_and_arc_w"
-        android:layout_alignParentLeft="true"
-        android:text="@string/c_and_arc_w"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/arc_w"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/c_and_arc_w"
-        android:layout_alignParentLeft="true"
-        android:text="@string/arc_w"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/unc_w"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/unc_num"
-        android:layout_alignBottom="@+id/unc_num"
-        android:layout_alignParentLeft="true"
-        android:text="@string/unc_w"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/check_w"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/check_num"
-        android:layout_alignRight="@+id/arc_w"
-        android:text="@string/check_w"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/total_w"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/check_w"
-        android:layout_alignParentLeft="true"
-        android:text="@string/total_w"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    </ListView>
 
 </RelativeLayout>
