@@ -25,10 +25,14 @@ public class TaskList {
 	}
 
 	public void removeTask(Task task) {
-		// TODO Auto-generated method stub
-		taskList.remove(task);
+		/*if (task.getChecked()){
+			SummariesActivity.CheckedSum(-1);
+		} else {
+			SummariesActivity.UncheckedSum(-1);
+		}*/
 		SummariesActivity.TotalSum(-1);
-	}
+		taskList.remove(task);
+		}
 	
 	public void archiveTask(Task task){
 		SummariesActivity.ArchivedSum(1);

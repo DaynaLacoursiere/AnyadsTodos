@@ -28,6 +28,8 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		
+		final int finalpos = position;
+		
 		if (convertView == null){
 			convertView = inflater.inflate(R.layout.single_task, null); 
 		}
@@ -39,8 +41,13 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				// TODO Auto-generated method stub
 				if (isChecked){
+					getItem(finalpos).setChecked(true);
 					SummariesActivity.CheckedSum(1);
 					SummariesActivity.UncheckedSum(-1);
+				} else {
+					getItem(finalpos).setChecked(false);
+					SummariesActivity.CheckedSum(-1);
+					SummariesActivity.UncheckedSum(1);
 				}
 				
 			}

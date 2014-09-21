@@ -13,7 +13,7 @@ public class MainActivity extends Activity {
 
 	private ListView taskList;
 	private EditText addTask;
-	private TaskListAdapter taskAdapter;
+	private static TaskListAdapter taskAdapter;
 	
 	
     @Override
@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
     	if (!addText.equals("")){
     		Task task = new Task(addText);
     		theTasks.addTask(task);
-    		taskAdapter.notifyDataSetChanged();
+    		notifyChange();
     	}
     	
     	
@@ -57,6 +57,9 @@ public class MainActivity extends Activity {
     	//Toast.makeText(MainActivity.this, task, Toast.LENGTH_SHORT).show();
     }
 
+    public static void notifyChange(){
+    	taskAdapter.notifyDataSetChanged();
+    }
     
     //goes to summary screen
     public void showSummaries(MenuItem menu){

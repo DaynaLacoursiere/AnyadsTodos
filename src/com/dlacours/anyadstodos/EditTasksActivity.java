@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 public class EditTasksActivity extends Activity {
 
-	private EditTaskAdapter editAdapter;
+	private static EditTaskAdapter editAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,10 @@ public class EditTasksActivity extends Activity {
     	//taskList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 		
 	}
+	
+    public static void notifyChange(){
+    	editAdapter.notifyDataSetChanged();
+    }
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
