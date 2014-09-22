@@ -32,5 +32,13 @@
     <string name="title_activity_archive_tasks">ArchiveTasksActivity</string>
     <string name="title_activity_summaries">SummariesActivity</string>
     <string name="title_activity_edit_tasks">EditTasksActivity</string>
+    <string name="checkedTitle">Checked</string>
+    <string name="uncheckedTitle">Unchecked</string>
+    <string name="archTitle">Archived &amp; Checked</string>
+    <string name="aruchTitle">Archived &amp; Unchecked</string>
+    <string name="line"> </string>
+    
+    
+    
 
 </resources>

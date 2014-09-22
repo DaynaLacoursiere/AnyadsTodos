@@ -21,9 +21,10 @@ public class EditTasksActivity extends Activity {
 		
 		ListView editList = (ListView) findViewById(R.id.taskEditor);
 		
-		TaskList theTasks = TaskListController.getTaskList();
+		TaskList allTasks = TaskListController.getTaskList();
+		TaskList unarchTasks = TaskListController.getUnarchList();
     
-        editAdapter = new EditTaskAdapter(this,theTasks);
+        editAdapter = new EditTaskAdapter(this,allTasks);
     	
     	editList.setAdapter(editAdapter);
     	//taskList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);

@@ -3,23 +3,32 @@ package com.dlacours.anyadstodos;
 public class Task {
 
 	protected String taskName;
-	protected Boolean isChecked;
+	protected boolean isChecked;
+	protected boolean isArchived;
 	
 	public Task(String taskName) {
-		// TODO Auto-generated constructor stub
 		this.taskName=taskName;
+		this.isChecked = false;
+		this.isArchived = false;
 	}
 
-	public void setChecked(Boolean checked){
+	public void setChecked(boolean checked){
 		isChecked = checked;
 	}
 	
-	public Boolean getChecked(){
+	public boolean getChecked(){
 		return isChecked;
 	}
 	
+	public void setArchived(boolean archived){
+		isArchived = archived;
+	}
+	
+	public boolean getArchived(){
+		return isArchived;
+	}
+	
 	public String getTask() {
-		// TODO Auto-generated method stub
 		return this.taskName;
 	}
 	

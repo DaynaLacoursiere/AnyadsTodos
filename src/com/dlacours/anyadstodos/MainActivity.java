@@ -14,6 +14,7 @@ public class MainActivity extends Activity {
 	private ListView taskList;
 	private EditText addTask;
 	private static TaskListAdapter taskAdapter;
+	//private static TaskListAdapter allTasksAdapter;
 	
 	
     @Override
@@ -23,8 +24,10 @@ public class MainActivity extends Activity {
         addTask = (EditText) findViewById(R.id.addTask);
         taskList = (ListView) findViewById(R.id.taskListView);
         
-        taskAdapter = new TaskListAdapter(this,TaskListController.getTaskList());
+        taskAdapter = new TaskListAdapter(this,TaskListController.getUnarchList());
     	
+        //allTasksAdapter = new TaskListAdapter(this, TaskListController.getTaskList());
+        
     	taskList.setAdapter(taskAdapter);
     	taskList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
     	
@@ -43,11 +46,13 @@ public class MainActivity extends Activity {
     	//Adds a new task
     	
     	String addText = addTask.getText().toString();
-    	TaskList theTasks = TaskListController.getTaskList();
+    	TaskList theTasks = TaskListController.getUnarchList();
+    	TaskList allTasks = TaskListController.getTaskList();
     	
     	if (!addText.equals("")){
     		Task task = new Task(addText);
-    		theTasks.addTask(task);
+    		theTasks.addUnarchivedTask(task);
+    		allTasks.addTask(task);
     		notifyChange();
     	}
     	

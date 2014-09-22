@@ -8,37 +8,77 @@ import java.util.Collection;
 public class TaskList {
 
 	protected ArrayList<Task> taskList;
+	protected ArrayList<Task> archList;
+	protected ArrayList<Task> unarchList;
 	
 	public TaskList(){
 		taskList = new ArrayList<Task>();
+		archList = new ArrayList<Task>();
+		unarchList = new ArrayList<Task>();
 	}
 	
 	//arraylists are very useful
 	public ArrayList<Task> getTasks() {
 		return taskList;
 	}
+	
+	public ArrayList<Task> getArchived(){
+		return archList;
+	}
+	
+	public int size(){
+		return taskList.size();
+	}
+	
+	public ArrayList<Task> getUnarchived(){
+		return unarchList;
+	}
 
 	public void addTask(Task task) {
 		taskList.add(task);
+		//unarchList.add(task);
 		SummariesActivity.TotalSum(1);
 		SummariesActivity.UncheckedSum(1);
 	}
+	
+	public void addUnarchivedTask(Task task){
+		unarchList.add(task);
+	}
 
 	public void removeTask(Task task) {
-		/*if (task.getChecked()){
+		if (task.getChecked()){
 			SummariesActivity.CheckedSum(-1);
 		} else {
 			SummariesActivity.UncheckedSum(-1);
-		}*/
+		}
+		
 		SummariesActivity.TotalSum(-1);
 		taskList.remove(task);
+	}
+	
+	public void removeUnarchivedTask(Task task){
+		unarchList.remove(task);
+	}
+	
+	public void removeArchivedTask(Task task){
+		if (task.getChecked()){
+			SummariesActivity.CheckArchSum(-1);
+		} else {
+			SummariesActivity.UncheckArchSum(-1);
 		}
+		archList.remove(task);
+		SummariesActivity.ArchivedSum(-1);
+	}
 	
 	public void archiveTask(Task task){
+		archList.add(task);
+		unarchList.remove(task);
 		SummariesActivity.ArchivedSum(1);
 	}
 	
 	public void unarchiveTask(Task task){
+		archList.remove(task);
+		unarchList.add(task);
 		SummariesActivity.ArchivedSum(-1);
 	}
 	

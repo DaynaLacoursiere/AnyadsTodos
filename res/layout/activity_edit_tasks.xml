@@ -6,14 +6,70 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#000000" 
     tools:context=".EditTasksActivity" >
+
+    <TextView
+        android:id="@+id/aruchTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/archTitle"
+        android:layout_alignBottom="@+id/archTitle"
+        android:layout_alignRight="@+id/taskEditor"
+        android:text="@string/aruchTitle"
+        android:textColor="#ff00ff"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/archTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/taskEditor"
+        android:layout_below="@+id/checkedTitle"
+        android:text="@string/archTitle"
+        android:textColor="#ff0000"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/checkedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/archTitle"
+        android:layout_marginRight="33dp"
+        android:text="@string/checkedTitle"
+        android:textColor="#00ff00"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/uncheckedTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/aruchTitle"
+        android:layout_alignRight="@+id/aruchTitle"
+        android:layout_marginRight="34dp"
+        android:text="@string/uncheckedTitle"
+        android:textColor="#ffff00"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <ListView
         android:id="@+id/taskEditor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignLeft="@+id/space"
+        android:layout_below="@+id/space" >
+
     </ListView>
+
+    <TextView
+        android:id="@+id/space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/aruchTitle"
+        android:text="@string/line"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>
