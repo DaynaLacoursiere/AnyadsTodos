@@ -5,11 +5,13 @@ public class Task {
 	protected String taskName;
 	protected boolean isChecked;
 	protected boolean isArchived;
+	protected boolean isRemoved;
 	
 	public Task(String taskName) {
 		this.taskName=taskName;
 		this.isChecked = false;
 		this.isArchived = false;
+		this.isRemoved = false;
 	}
 
 	public void setChecked(boolean checked){
@@ -26,6 +28,14 @@ public class Task {
 	
 	public boolean getArchived(){
 		return isArchived;
+	}
+	
+	public void setRemoved(boolean removed){
+		isRemoved = removed;
+	}
+	
+	public boolean getRemoved(){
+		return isRemoved;
 	}
 	
 	public String getTask() {

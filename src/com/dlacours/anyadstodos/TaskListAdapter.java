@@ -46,12 +46,16 @@ public class TaskListAdapter extends ArrayAdapter<Task> {
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				if (isChecked){
 					getItem(finalpos).setChecked(true);
-					SummariesActivity.CheckedSum(1);
-					SummariesActivity.UncheckedSum(-1);
+					if(!getItem(finalpos).getRemoved()){
+						SummariesActivity.CheckedSum(1);
+						SummariesActivity.UncheckedSum(-1);
+					}
 				} else {
 					getItem(finalpos).setChecked(false);
-					SummariesActivity.CheckedSum(-1);
-					SummariesActivity.UncheckedSum(1);
+					if(!getItem(finalpos).getRemoved()){
+						SummariesActivity.CheckedSum(-1);
+						SummariesActivity.UncheckedSum(1);
+					}
 				}
 				
 			}

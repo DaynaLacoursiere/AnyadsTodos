@@ -77,6 +77,7 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 					public void onClick(DialogInterface dialog, int which) {
 				    	TaskList theTasks = TaskListController.getTaskList();
 			    		theTasks.removeTask(getItem(finalpos));
+			    		getItem(finalpos).setRemoved(true);
 			    		
 			    		if(getItem(finalpos).getArchived()){
 			    			TaskList archTasks = TaskListController.getArchList();
@@ -86,6 +87,7 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 			    			unarchTasks.removeUnarchivedTask(getUnarchItem(finalpos));
 			    		}
 			    		EditTasksActivity.notifyChange();
+			    		//ArchiveTasksActivity.notifyChange();
 			    		MainActivity.notifyChange();
 					}
 
@@ -94,15 +96,47 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 					
 					
 					public void onClick(DialogInterface dialog, int which) {
-						// ARCHIVE TASK HERE
+						if (!getItem(finalpos).getArchived()){
+							TaskList archTasks = TaskListController.getArchList();
+							TaskList unarchTasks = TaskListController.getUnarchList();
+							
+							archTasks.addArchivedTask(getItem(finalpos));
+							unarchTasks.removeUnarchivedTask(getUnarchItem(finalpos));
+							
+							getItem(finalpos).setArchived(true);
+							if (getItem(finalpos).getChecked()){
+								SummariesActivity.CheckArchSum(1);
+							} else {
+								SummariesActivity.UncheckArchSum(1);
+							}
+						
+							EditTasksActivity.notifyChange();
+							MainActivity.notifyChange();
+						}
 						
 					}
 				});
-				editDialogue.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+				editDialogue.setNegativeButton("Unarchive", new DialogInterface.OnClickListener() {
 					
 					
 					public void onClick(DialogInterface dialog, int which) {
-						//DO NOTHING HERE						
+						if (getItem(finalpos).getArchived()){
+							TaskList archTasks = TaskListController.getArchList();
+							TaskList unarchTasks = TaskListController.getUnarchList();
+							
+							archTasks.removeArchivedTask(getItem(finalpos));
+							unarchTasks.addUnarchivedTask(getUnarchItem(finalpos));
+							
+							getItem(finalpos).setArchived(false);
+							if (getItem(finalpos).getChecked()){
+								SummariesActivity.CheckArchSum(-1);
+							} else {
+								SummariesActivity.UncheckArchSum(-1);
+							}
+						
+							EditTasksActivity.notifyChange();
+							MainActivity.notifyChange();				
+						}
 					}
 				});
 				editDialogue.show();

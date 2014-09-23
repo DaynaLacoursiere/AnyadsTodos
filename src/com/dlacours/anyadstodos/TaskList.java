@@ -26,17 +26,14 @@ public class TaskList {
 		return archList;
 	}
 	
-	public int size(){
-		return taskList.size();
-	}
-	
 	public ArrayList<Task> getUnarchived(){
 		return unarchList;
 	}
 
+	
+	//additions
 	public void addTask(Task task) {
 		taskList.add(task);
-		//unarchList.add(task);
 		SummariesActivity.TotalSum(1);
 		SummariesActivity.UncheckedSum(1);
 	}
@@ -44,7 +41,13 @@ public class TaskList {
 	public void addUnarchivedTask(Task task){
 		unarchList.add(task);
 	}
+	
+	public void addArchivedTask(Task task){
+		archList.add(task);
+	}
 
+	
+	//removals
 	public void removeTask(Task task) {
 		if (task.getChecked()){
 			SummariesActivity.CheckedSum(-1);
@@ -70,16 +73,34 @@ public class TaskList {
 		SummariesActivity.ArchivedSum(-1);
 	}
 	
+
+	
+	
+	
+	
+	
+	
+	//don't think I'm using these four
 	public void archiveTask(Task task){
 		archList.add(task);
 		unarchList.remove(task);
 		SummariesActivity.ArchivedSum(1);
+		if (task.getChecked()){
+			SummariesActivity.CheckArchSum(1);
+		} else {
+			SummariesActivity.UncheckArchSum(1);
+		}
 	}
 	
 	public void unarchiveTask(Task task){
 		archList.remove(task);
 		unarchList.add(task);
 		SummariesActivity.ArchivedSum(-1);
+		if (task.getChecked()){
+			SummariesActivity.CheckArchSum(-1);
+		} else {
+			SummariesActivity.UncheckArchSum(-1);
+		}
 	}
 	
 	public void checkTask(Task task){

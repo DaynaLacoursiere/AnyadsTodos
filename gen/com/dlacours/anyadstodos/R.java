@@ -74,6 +74,7 @@ public final class R {
         public static final int arc_num=0x7f05000e;
         public static final int arc_w=0x7f050015;
         public static final int archTitle=0x7f050021;
+        public static final int archive=0x7f050024;
         public static final int aruchTitle=0x7f050022;
         public static final int button_add=0x7f050003;
         public static final int button_archive=0x7f050004;
@@ -82,10 +83,12 @@ public final class R {
         public static final int button_sum=0x7f050006;
         public static final int c_and_arc_num=0x7f05000f;
         public static final int c_and_arc_w=0x7f050014;
+        public static final int cancel=0x7f050026;
         public static final int check_all=0x7f05000a;
         public static final int check_num=0x7f050012;
         public static final int check_w=0x7f050017;
         public static final int checkedTitle=0x7f05001f;
+        public static final int delete=0x7f050025;
         public static final int edit_message=0x7f050002;
         public static final int email=0x7f05000b;
         public static final int email_screen_title=0x7f050008;

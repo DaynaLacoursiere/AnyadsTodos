@@ -14,7 +14,6 @@ public class MainActivity extends Activity {
 	private ListView taskList;
 	private EditText addTask;
 	private static TaskListAdapter taskAdapter;
-	//private static TaskListAdapter allTasksAdapter;
 	
 	
     @Override
@@ -26,7 +25,6 @@ public class MainActivity extends Activity {
         
         taskAdapter = new TaskListAdapter(this,TaskListController.getUnarchList());
     	
-        //allTasksAdapter = new TaskListAdapter(this, TaskListController.getTaskList());
         
     	taskList.setAdapter(taskAdapter);
     	taskList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
@@ -81,7 +79,7 @@ public class MainActivity extends Activity {
 
     //goes to archive screen
     public void archiveTasks(MenuItem menu){
-    	Intent intent = new Intent(this, ArchiveListActivities.class);
+    	Intent intent = new Intent(this, ArchiveTasksActivity.class);
     	startActivity(intent);
     }
 

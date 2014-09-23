@@ -19,8 +19,7 @@ public class EditTasksActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_tasks);
 		
-		ListView editList = (ListView) findViewById(R.id.taskEditor);
-		
+		ListView editList = (ListView) findViewById(R.id.taskEditor);            
 		TaskList allTasks = TaskListController.getTaskList();
 		TaskList unarchTasks = TaskListController.getUnarchList();
     

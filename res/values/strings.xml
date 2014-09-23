@@ -37,8 +37,8 @@
     <string name="archTitle">Archived &amp; Checked</string>
     <string name="aruchTitle">Archived &amp; Unchecked</string>
     <string name="line"> </string>
-    
-    
-    
+    <string name="archive">Archive</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
 
 </resources>

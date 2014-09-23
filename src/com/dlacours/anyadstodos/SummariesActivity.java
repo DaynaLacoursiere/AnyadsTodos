@@ -54,32 +54,26 @@ public class SummariesActivity extends Activity {
 	protected static int uncheck_archived = 0;
 	
 	public static void TotalSum(int number) {
-		// TODO Auto-generated constructor stub
 		total += number;
 	}
 	
 	public static void CheckedSum(int number) {
-		// TODO Auto-generated constructor stub
 		checked += number;
 	}
 	
 	public static void UncheckedSum(int number) {
-		// TODO Auto-generated constructor stub
 		unchecked += number;
 	}
 	
 	public static void ArchivedSum(int number) {
-		// TODO Auto-generated constructor stub
 		archived += number;
 	}
 	
 	public static void CheckArchSum(int number) {
-		// TODO Auto-generated constructor stub
 		check_archived += number;
 	}
 	
 	public static void UncheckArchSum(int number) {
-		// TODO Auto-generated constructor stub
 		uncheck_archived += number;
 	}
 	
