@@ -71,12 +71,11 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 			public void onClick(View v) {
 				final View finalv = v;
 				AlertDialog.Builder editDialogue = new AlertDialog.Builder(getContext());
-				editDialogue.setMessage("Delete or Archive " + getItem(finalpos));
+				editDialogue.setMessage("Delete, Archive, or Unarchive " + getItem(finalpos) + "?");
 				editDialogue.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
 					
 					public void onClick(DialogInterface dialog, int which) {
 				    	TaskList theTasks = TaskListController.getTaskList();
-			    		theTasks.removeTask(getItem(finalpos));
 			    		getItem(finalpos).setRemoved(true);
 			    		
 			    		if(getItem(finalpos).getArchived()){
@@ -84,10 +83,11 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 			    			archTasks.removeArchivedTask(getArchItem(finalpos));
 			    		} else {
 			    			TaskList unarchTasks = TaskListController.getUnarchList();
-			    			unarchTasks.removeUnarchivedTask(getUnarchItem(finalpos));
+			    			unarchTasks.removeUnarchivedTask(getItem(finalpos));
 			    		}
+
+			    		theTasks.removeTask(getItem(finalpos));
 			    		EditTasksActivity.notifyChange();
-			    		//ArchiveTasksActivity.notifyChange();
 			    		MainActivity.notifyChange();
 					}
 
@@ -100,15 +100,17 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 							TaskList archTasks = TaskListController.getArchList();
 							TaskList unarchTasks = TaskListController.getUnarchList();
 							
-							archTasks.addArchivedTask(getItem(finalpos));
-							unarchTasks.removeUnarchivedTask(getUnarchItem(finalpos));
 							
 							getItem(finalpos).setArchived(true);
 							if (getItem(finalpos).getChecked()){
 								SummariesActivity.CheckArchSum(1);
+								SummariesActivity.CheckedSum(-1);
 							} else {
 								SummariesActivity.UncheckArchSum(1);
+								SummariesActivity.UncheckedSum(-1);
 							}
+							archTasks.addArchivedTask(getItem(finalpos));
+							unarchTasks.removeUnarchivedTask(getItem(finalpos));
 						
 							EditTasksActivity.notifyChange();
 							MainActivity.notifyChange();
@@ -124,16 +126,19 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 							TaskList archTasks = TaskListController.getArchList();
 							TaskList unarchTasks = TaskListController.getUnarchList();
 							
-							archTasks.removeArchivedTask(getItem(finalpos));
-							unarchTasks.addUnarchivedTask(getUnarchItem(finalpos));
+							
 							
 							getItem(finalpos).setArchived(false);
 							if (getItem(finalpos).getChecked()){
 								SummariesActivity.CheckArchSum(-1);
+								SummariesActivity.CheckedSum(1);
 							} else {
 								SummariesActivity.UncheckArchSum(-1);
+								SummariesActivity.UncheckedSum(1);
 							}
-						
+							archTasks.removeArchivedTask(getItem(finalpos));
+							unarchTasks.addUnarchivedTask(getItem(finalpos));
+							
 							EditTasksActivity.notifyChange();
 							MainActivity.notifyChange();				
 						}

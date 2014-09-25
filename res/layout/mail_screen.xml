@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/total_w"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:gravity="center_horizontal"
-        android:text="@string/email_screen_title"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#ff0000"
-        android:textSize="@android:dimen/app_icon_size" />
+    android:layout_height="match_parent" 
+    android:background="#000000">
 
     <Button
         android:id="@+id/check_all_button"
@@ -22,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/email_button"
+        android:textColor="#ff0000"
         android:text="@string/check_all" />
 
     <Button
@@ -42,5 +31,38 @@
         android:layout_centerHorizontal="true" >
 
     </ListView>
+
+    <TextView
+        android:id="@+id/total_w"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:text="@string/email_screen_title"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ff0000"
+        android:textSize="@android:dimen/app_icon_size" />
+
+    <TextView
+        android:id="@+id/regularTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/reg_tasks"
+        android:textColor="#00ffff"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/archivedTasks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/total_w"
+        android:layout_alignBottom="@+id/total_w"
+        android:layout_alignParentRight="true"
+        android:text="@string/arch_tasks"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>

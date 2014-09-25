@@ -11,11 +11,12 @@ public class TaskList {
 	protected ArrayList<Task> archList;
 	protected ArrayList<Task> unarchList;
 	
+	
 	public TaskList(){
 		taskList = new ArrayList<Task>();
 		archList = new ArrayList<Task>();
 		unarchList = new ArrayList<Task>();
-	}
+	} 
 	
 	//arraylists are very useful
 	public ArrayList<Task> getTasks() {
@@ -29,12 +30,14 @@ public class TaskList {
 	public ArrayList<Task> getUnarchived(){
 		return unarchList;
 	}
+	
 
 	
 	//additions
 	public void addTask(Task task) {
 		taskList.add(task);
 		SummariesActivity.TotalSum(1);
+		SummariesActivity.UnarchivedSum(1);
 		SummariesActivity.UncheckedSum(1);
 	}
 	
@@ -44,6 +47,7 @@ public class TaskList {
 	
 	public void addArchivedTask(Task task){
 		archList.add(task);
+		SummariesActivity.ArchivedSum(1);
 	}
 
 	
@@ -61,6 +65,7 @@ public class TaskList {
 	
 	public void removeUnarchivedTask(Task task){
 		unarchList.remove(task);
+		SummariesActivity.UnarchivedSum(-1);
 	}
 	
 	public void removeArchivedTask(Task task){
@@ -112,5 +117,6 @@ public class TaskList {
 		SummariesActivity.UncheckedSum(1);
 		SummariesActivity.CheckedSum(-1);
 	}
+
 
 }

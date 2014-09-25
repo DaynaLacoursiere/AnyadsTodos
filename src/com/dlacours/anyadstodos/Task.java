@@ -6,12 +6,14 @@ public class Task {
 	protected boolean isChecked;
 	protected boolean isArchived;
 	protected boolean isRemoved;
+	protected boolean toEmail;
 	
 	public Task(String taskName) {
 		this.taskName=taskName;
 		this.isChecked = false;
 		this.isArchived = false;
 		this.isRemoved = false;
+		this.toEmail = false;
 	}
 
 	public void setChecked(boolean checked){
@@ -46,4 +48,11 @@ public class Task {
 		return getTask();
 	}
 
+	public boolean getEmail() {
+		return toEmail;
+	}
+
+	public void setEmail(boolean email){
+		toEmail = email;
+	}
 }

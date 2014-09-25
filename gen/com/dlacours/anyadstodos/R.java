@@ -24,28 +24,30 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080012;
+        public static final int action_settings=0x7f080014;
         public static final int addButton=0x7f080006;
         public static final int addTask=0x7f080007;
         public static final int archTitle=0x7f080001;
-        public static final int archiveItem=0x7f080015;
+        public static final int archiveItem=0x7f080017;
         public static final int archiveListView=0x7f080009;
+        public static final int archivedTasks=0x7f080010;
         public static final int aruchTitle=0x7f080000;
-        public static final int check_all_button=0x7f08000c;
+        public static final int check_all_button=0x7f08000b;
         public static final int checkedTitle=0x7f080003;
-        public static final int editTasksItem=0x7f080016;
+        public static final int editTasksItem=0x7f080018;
         public static final int edit_task=0x7f08000a;
-        public static final int emailList=0x7f08000e;
-        public static final int email_button=0x7f08000d;
-        public static final int mailItem=0x7f080014;
+        public static final int emailList=0x7f08000d;
+        public static final int email_button=0x7f08000c;
+        public static final int mailItem=0x7f080016;
+        public static final int regularTasks=0x7f08000f;
         public static final int space=0x7f080005;
-        public static final int sumList=0x7f080011;
-        public static final int sum_title=0x7f080010;
-        public static final int summaryItem=0x7f080013;
+        public static final int sumList=0x7f080013;
+        public static final int sum_title=0x7f080012;
+        public static final int summaryItem=0x7f080015;
         public static final int taskEditor=0x7f080002;
         public static final int taskListView=0x7f080008;
-        public static final int taskcheckbox=0x7f08000f;
-        public static final int total_w=0x7f08000b;
+        public static final int taskcheckbox=0x7f080011;
+        public static final int total_w=0x7f08000e;
         public static final int uncheckedTitle=0x7f080004;
     }
     public static final class layout {
@@ -74,6 +76,7 @@ public final class R {
         public static final int arc_num=0x7f05000e;
         public static final int arc_w=0x7f050015;
         public static final int archTitle=0x7f050021;
+        public static final int arch_tasks=0x7f050027;
         public static final int archive=0x7f050024;
         public static final int aruchTitle=0x7f050022;
         public static final int button_add=0x7f050003;
@@ -95,6 +98,7 @@ public final class R {
         public static final int goback=0x7f050009;
         public static final int hello_world=0x7f05001a;
         public static final int line=0x7f050023;
+        public static final int reg_tasks=0x7f050028;
         public static final int sum_screen_title=0x7f05000c;
         public static final int title_activity_archive_list_activities=0x7f050019;
         public static final int title_activity_archive_tasks=0x7f05001c;

@@ -27,7 +27,7 @@
             android:label="@string/title_activity_archive_list_activities" >
         </activity>
         <activity
-            android:name="MailItemsActivityy"
+            android:name="MailItemsActivity"
             android:label="@string/title_activity_mail_items" >
         </activity>
         <activity

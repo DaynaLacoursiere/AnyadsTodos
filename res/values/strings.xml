@@ -11,8 +11,8 @@
     <string name="button_home">H</string>
     <string name="email_screen_title">EMAIL</string>
     <string name="goback">back</string>
-    <string name="check_all">check all</string>
-    <string name="email">send</string>
+    <string name="check_all">send all tasks</string>
+    <string name="email">send selected tasks</string>
     <string name="sum_screen_title">Summaries</string>
     <string name="unc_num">#</string>
     <string name="arc_num">#</string>
@@ -40,5 +40,7 @@
     <string name="archive">Archive</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
+    <string name ="arch_tasks">Archived Tasks</string>
+    <string name ="reg_tasks">Regular Tasks</string>
 
 </resources>

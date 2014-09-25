@@ -32,6 +32,7 @@ public class SummariesActivity extends Activity {
 	public void SumList(){
 		sumList = new ArrayList<String>();
 		sumList.add("Total Tasks: " + total);
+		sumList.add("Unarchived Tasks: " + unarchived);
 		sumList.add("Checked Tasks: " + checked);
 		sumList.add("Unchecked Tasks: " + unchecked);
 		sumList.add("Archived Tasks: " + archived);
@@ -47,6 +48,7 @@ public class SummariesActivity extends Activity {
 	}
 
 	protected static int total = 0;
+	protected static int unarchived = 0;
 	protected static int checked = 0;
 	protected static int unchecked = 0;
 	protected static int archived = 0;
@@ -55,6 +57,10 @@ public class SummariesActivity extends Activity {
 	
 	public static void TotalSum(int number) {
 		total += number;
+	}
+	
+	public static void UnarchivedSum(int number) {
+		unarchived += number;
 	}
 	
 	public static void CheckedSum(int number) {
