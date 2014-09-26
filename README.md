@@ -7,3 +7,6 @@ This app allows users to add, remove, archive, unarchive, check, and uncheck tas
 
 Unfortunately, I did not manage to implement saving and loading within the given time-frame, 
 therefore exiting the app will cause the user to lose all of their data.
+
+
+In building this app, I consulted with Lexie Bartlett, Aedan Burnett, and Marcus Karpoff. 
