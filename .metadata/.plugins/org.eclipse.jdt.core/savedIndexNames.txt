@@ -1,0 +1,2 @@
+INDEX VERSION 1.126+/cshome/dlacours/301/EclipseStuff/Anyad'sTodos/.metadata/.plugins/org.eclipse.jdt.core
+601760533.index
