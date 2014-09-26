@@ -15,6 +15,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class EditTaskAdapter extends ArrayAdapter<Task> {
+	/*This class does a lot. It monitors the edit tasks screen.
+	 *Therefore it needs to know information about each task,
+	 *including whether it's archived, and whether it's checked off.
+	 *It is here that the user can archive, unarchive, or delete a
+	 *task.*/
 
 	private LayoutInflater inflater;
 	
@@ -47,7 +52,6 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 		
 		TextView editTask = (TextView) convertView.findViewById(R.id.edit_task);
 		
-		//CheckBox editCheck = (CheckBox) convertView.findViewById(R.id.edit_check);
 		
 		editTask.setText(getItem(position).getTask());
 		
@@ -88,10 +92,6 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 
 			    		theTasks.removeTask(getItem(finalpos));
 
-			        	/*TaskListController.saveTasksInFile(getContext());
-			        	TaskListController.saveUnarchInFile(getContext());
-			        	TaskListController.saveArchInFile(getContext());
-			        	*/
 			    		EditTasksActivity.notifyChange();
 			    		MainActivity.notifyChange();
 					}

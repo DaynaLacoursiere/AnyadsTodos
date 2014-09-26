@@ -10,7 +10,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
-
+	/*initializes and sets the mail task Adapter.
+	 * This class also handles adding tasks using
+	 * the add button on the main screen of the app.
+	 * Also contains the intents that move the user
+	 * through the app screens */
 	private ListView taskList;
 	private EditText addTask;
 	private static TaskListAdapter taskAdapter;
@@ -39,29 +43,7 @@ public class MainActivity extends Activity {
         return true;
     }
     
-	/*protected void onStart() {
-		super.onStart();
-		TaskListController.loadTasksFromFile(getBaseContext());
-		TaskListController.loadArchFromFile(getBaseContext());
-		TaskListController.loadUnarchFromFile(getBaseContext());
-    	taskAdapter = new TaskListAdapter(this,TaskListController.getUnarchList());
-    	
-    	taskList.setAdapter(taskAdapter);
-		//notifyChange();
-	}
-	
-	protected void onResume() {
-		super.onResume();
-		TaskListController.loadTasksFromFile(getBaseContext());
-		TaskListController.loadArchFromFile(getBaseContext());
-		TaskListController.loadUnarchFromFile(getBaseContext());
-    	taskAdapter = new TaskListAdapter(this,TaskListController.getUnarchList());
-    	
-    	taskList.setAdapter(taskAdapter);
-		//notifyChange();
-	}*/
 
-  
     //Called when user clicks the Add button This is attached to the addButton in the xml.
     public void addTask(View view){
     	//Adds a new task
@@ -75,13 +57,7 @@ public class MainActivity extends Activity {
     		Task task = new Task(addText);
     		theTasks.addUnarchivedTask(task);
     		allTasks.addTask(task);
-        	/*TaskListController.saveTasksInFile(getBaseContext());
-        	TaskListController.saveUnarchInFile(getBaseContext());
-        	TaskListController.saveArchInFile(getBaseContext());
-        	
-        	taskAdapter = new TaskListAdapter(this,TaskListController.getUnarchList());
-        	
-        	taskList.setAdapter(taskAdapter);*/
+    
     		notifyChange();
     	}
     	

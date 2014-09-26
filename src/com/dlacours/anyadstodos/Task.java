@@ -1,7 +1,10 @@
 package com.dlacours.anyadstodos;
 
 public class Task {
-
+	/*This class represents every task in the app.
+	 * It contains booleans, getters, and setters 
+	 * that allow other classes to learn about 
+	 * the tasks*/
 	protected String taskName;
 	protected boolean isChecked;
 	protected boolean isArchived;

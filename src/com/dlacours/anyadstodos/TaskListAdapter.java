@@ -11,7 +11,8 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class TaskListAdapter extends ArrayAdapter<Task> {
-	//For main task list
+	/*This is the adapter for the main tasklist.
+	 * It monitors checkmark changes*/
 	
 	
 	private LayoutInflater inflater;

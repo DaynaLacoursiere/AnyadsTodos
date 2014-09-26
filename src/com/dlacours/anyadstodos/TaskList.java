@@ -6,7 +6,8 @@ import java.util.Collection;
 
 
 public class TaskList {
-
+	/*Used to create arraylists, add tasks,
+	 * and remove tasks*/
 	protected ArrayList<Task> taskList;
 	protected ArrayList<Task> archList;
 	protected ArrayList<Task> unarchList;

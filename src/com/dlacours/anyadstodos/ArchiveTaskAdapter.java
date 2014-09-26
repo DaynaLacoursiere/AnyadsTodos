@@ -10,7 +10,11 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class ArchiveTaskAdapter extends ArrayAdapter<Task> {
-
+	/*This class is the intermediate between my archive list 
+	 * (initialized in ArchiveTasksActivity) and the ListView you see on the screen
+	 * It monitors the checkboxes in the Archive ListView*/
+	
+	
 	private LayoutInflater inflater;
 	
 	public ArchiveTaskAdapter(Context context, TaskList archiveList) {

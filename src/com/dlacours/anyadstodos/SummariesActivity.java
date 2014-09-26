@@ -9,9 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class SummariesActivity extends Activity {
-	
-
-
+	/*This class creates and displays the summaries*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

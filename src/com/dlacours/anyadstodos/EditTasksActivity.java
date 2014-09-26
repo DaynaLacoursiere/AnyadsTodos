@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 public class EditTasksActivity extends Activity {
-
+	/*initializes and sets editAdapter*/
 	private static EditTaskAdapter editAdapter;
 
 	@Override
@@ -26,7 +26,6 @@ public class EditTasksActivity extends Activity {
         editAdapter = new EditTaskAdapter(this,allTasks);
     	
     	editList.setAdapter(editAdapter);
-    	//taskList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 		
 	}
 	

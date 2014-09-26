@@ -6,7 +6,8 @@ import android.view.Menu;
 import android.widget.ListView;
 
 public class ArchiveTasksActivity extends Activity {
-
+	/*This class initializes my archive list adapter*/
+	
 	private static ArchiveTaskAdapter archiveAdapter;
 	private ListView archList;
 	private TaskList archTasks;
@@ -27,16 +28,6 @@ public class ArchiveTasksActivity extends Activity {
 		
 	}
 	
-	/*protected void onStart() {
-		super.onStart();
-		TaskListController.loadTasksFromFile(getBaseContext());
-		TaskListController.loadArchFromFile(getBaseContext());
-		TaskListController.loadUnarchFromFile(getBaseContext());
-		archiveAdapter = new ArchiveTaskAdapter(this, archTasks);
-	    	
-	    archList.setAdapter(archiveAdapter);
-		//notifyChange();
-	}*/
 	
     public static void notifyChange(){
     	archiveAdapter.notifyDataSetChanged();

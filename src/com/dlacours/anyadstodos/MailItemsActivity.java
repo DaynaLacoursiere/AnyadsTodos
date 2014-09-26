@@ -15,7 +15,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class MailItemsActivity extends Activity {
-
+	/*initializes and sets mailAdapter.
+	 * Also implements email sending,
+	 * both send all and send selected buttons */
 	private static MailItemsAdapter mailAdapter;
 	public static String theEmailList = "";
 	
@@ -34,7 +36,6 @@ public class MailItemsActivity extends Activity {
     	mailList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
     	
 
-		//final TaskList allTasks = TaskListController.getTaskList();
 
     	Collection<Task> allTasks = TaskListController.getTaskList().getTasks();
     	final ArrayList<Task> allTasksArray = new ArrayList<Task>(allTasks);

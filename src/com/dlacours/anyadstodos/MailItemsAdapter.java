@@ -17,7 +17,8 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Toast;
 
 public class MailItemsAdapter extends ArrayAdapter<Task> {
-
+	/*watches the checkboxes so MailItemsActivity knows which 
+	 *tasks have been selected*/
 	private LayoutInflater inflater;
 	
 	public MailItemsAdapter(Context context, TaskList mailList) {
