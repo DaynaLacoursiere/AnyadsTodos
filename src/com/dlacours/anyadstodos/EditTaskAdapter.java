@@ -87,6 +87,11 @@ public class EditTaskAdapter extends ArrayAdapter<Task> {
 			    		}
 
 			    		theTasks.removeTask(getItem(finalpos));
+
+			        	/*TaskListController.saveTasksInFile(getContext());
+			        	TaskListController.saveUnarchInFile(getContext());
+			        	TaskListController.saveArchInFile(getContext());
+			        	*/
 			    		EditTasksActivity.notifyChange();
 			    		MainActivity.notifyChange();
 					}

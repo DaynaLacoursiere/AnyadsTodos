@@ -8,15 +8,17 @@ import android.widget.ListView;
 public class ArchiveTasksActivity extends Activity {
 
 	private static ArchiveTaskAdapter archiveAdapter;
+	private ListView archList;
+	private TaskList archTasks;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.archive_list);
 		
-		ListView archList = (ListView) findViewById(R.id.archiveListView);
+		archList = (ListView) findViewById(R.id.archiveListView);
 		
-		TaskList archTasks = TaskListController.getArchList();
+		archTasks = TaskListController.getArchList();
     
         archiveAdapter = new ArchiveTaskAdapter(this, archTasks);
     	
@@ -24,6 +26,17 @@ public class ArchiveTasksActivity extends Activity {
     	archList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 		
 	}
+	
+	/*protected void onStart() {
+		super.onStart();
+		TaskListController.loadTasksFromFile(getBaseContext());
+		TaskListController.loadArchFromFile(getBaseContext());
+		TaskListController.loadUnarchFromFile(getBaseContext());
+		archiveAdapter = new ArchiveTaskAdapter(this, archTasks);
+	    	
+	    archList.setAdapter(archiveAdapter);
+		//notifyChange();
+	}*/
 	
     public static void notifyChange(){
     	archiveAdapter.notifyDataSetChanged();

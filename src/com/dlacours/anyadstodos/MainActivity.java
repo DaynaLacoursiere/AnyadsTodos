@@ -39,6 +39,29 @@ public class MainActivity extends Activity {
         return true;
     }
     
+	/*protected void onStart() {
+		super.onStart();
+		TaskListController.loadTasksFromFile(getBaseContext());
+		TaskListController.loadArchFromFile(getBaseContext());
+		TaskListController.loadUnarchFromFile(getBaseContext());
+    	taskAdapter = new TaskListAdapter(this,TaskListController.getUnarchList());
+    	
+    	taskList.setAdapter(taskAdapter);
+		//notifyChange();
+	}
+	
+	protected void onResume() {
+		super.onResume();
+		TaskListController.loadTasksFromFile(getBaseContext());
+		TaskListController.loadArchFromFile(getBaseContext());
+		TaskListController.loadUnarchFromFile(getBaseContext());
+    	taskAdapter = new TaskListAdapter(this,TaskListController.getUnarchList());
+    	
+    	taskList.setAdapter(taskAdapter);
+		//notifyChange();
+	}*/
+
+  
     //Called when user clicks the Add button This is attached to the addButton in the xml.
     public void addTask(View view){
     	//Adds a new task
@@ -46,18 +69,26 @@ public class MainActivity extends Activity {
     	String addText = addTask.getText().toString();
     	TaskList theTasks = TaskListController.getUnarchList();
     	TaskList allTasks = TaskListController.getTaskList();
+    	//TaskList archTasks = TaskListController.getArchList();
     	
     	if (!addText.equals("")){
     		Task task = new Task(addText);
     		theTasks.addUnarchivedTask(task);
     		allTasks.addTask(task);
+        	/*TaskListController.saveTasksInFile(getBaseContext());
+        	TaskListController.saveUnarchInFile(getBaseContext());
+        	TaskListController.saveArchInFile(getBaseContext());
+        	
+        	taskAdapter = new TaskListAdapter(this,TaskListController.getUnarchList());
+        	
+        	taskList.setAdapter(taskAdapter);*/
     		notifyChange();
     	}
     	
     	
+    	
     	addTask.setText("");
     	
-    	//Toast.makeText(MainActivity.this, task, Toast.LENGTH_SHORT).show();
     }
 
     public static void notifyChange(){
@@ -88,4 +119,6 @@ public class MainActivity extends Activity {
     	Intent intent = new Intent(this, EditTasksActivity.class);
     	startActivity(intent);
     }
+
+
 }
