@@ -10,3 +10,4 @@ therefore exiting the app will cause the user to lose all of their data.
 
 
 In building this app, I consulted with Lexie Bartlett, Aedan Burnett, and Marcus Karpoff. 
+I also watched the StudentPicker videos, and a lot of my initial code came from there. 
